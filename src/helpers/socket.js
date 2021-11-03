@@ -4,7 +4,7 @@ import { io } from 'socket.io-client'
 const ENDPOINT = "https://project-realtime-chatapp.herokuapp.com/";
 
 
-export const socket = io(ENDPOINT)
+export const socket = io(ENDPOINT , {transfer:"websocket"})
 export let socketID = ''
 socket.on('connect', () => {
   socketID = socket.id
